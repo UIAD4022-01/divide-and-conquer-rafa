@@ -13,7 +13,10 @@
 
         bool hasLeftCycle = HasCycle(matrix, start, mid);
         bool hasRightCycle = HasCycle(matrix, mid, end);
-
+        if(hasLeftCycle || hasRightCycle==true )
+        {
+            return true;
+        }
 
         for (int i = start; i < mid; i++)
         {
@@ -30,7 +33,7 @@
             }
         }
 
-        return hasLeftCycle || hasRightCycle;
+      return false;
     }
 
     public static bool HasCycleWrapper(int[,] matrix)
